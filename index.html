@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度舆情</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" type="text/css" href="yuqing.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+</head>
+<body>
+	<div id='top'></div>
+	<div id='dowebok'>
+		<div class="section section1">
+			<div class='content'>
+				<div class='hai'></div>
+				<div class='yun'></div>
+				<img src="images/baidu.png" class='baidu'>
+				<img src="images/hill1.png" class='hill1'>
+				<img src="images/hill2.png" class='hill2'>
+				<img src="images/hill3.png" class='hill3'>
+				<img src="images/chuan.png" class='chuan'>
+				<img src="images/feiji.png" class='feiji'>
+				<img src="images/down.png" class='down'>
+			</div>
+		</div>
+		<div class="section section2">
+			<div class='content'>
+				<div class='left'>
+					<img src="images/lingxian.png" class='lingxian'>
+					<h1>数据收集与处理</h1>
+					<p>15年专业数据收集与语义分析技术积累卓越极致，不断攀登</p>
+				</div>
+				<div class='right'>
+					<img src="images/shu.png" class='shu'>
+				</div>
+				<img src="images/down.png" class='down'>
+			</div>
+		</div>
+		<div class="section section3">
+			<div class='content'>
+				<div class='left'>
+					<img src="images/quanmian.png" class='lingxian'>
+					<h1>舆情分析逻辑与架构</h1>
+					<p>声量诊断、传播分析、情感提炼、受众画像有方法论，更有智慧</p>
+				</div>
+				<div class='right'>
+					<img src="images/renwang.png" class='shu renwang'>
+				</div>
+				<img src="images/down.png" class='down'>
+			</div>
+		</div>
+		<div class="section section4">
+			<div class='content'>
+				<div class='left'>
+					<img src="images/zhuanye.png" class='lingxian'>
+					<h1>专业数据可视化</h1>
+					<p>非凡的数据洞悉和可视化能力精研数据，惊艳所见</p>
+				</div>
+				<div class='right'>
+					<img src="images/jieti.png" class='shu jieti'>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+		anchors: ['page1', 'page2', 'page3', 'page4'],
+		'navigation':true,
+		navigationTooltips:['登录百度舆情','领先:数据收集与处理','全面:舆情分析逻辑与架构','专业:专业数据可视化'],
+		afterLoad:function(anchorLink,index){
+			$(".content").removeAttr("id").eq(index-1).attr({id:"active"});
+		}
+	});
+			$(".down").click(function(){
+				
+				$.fn.fullpage.moveSectionDown();
+			});
+});
+</script>
+</html>
